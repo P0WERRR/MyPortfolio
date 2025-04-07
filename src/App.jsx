@@ -33,7 +33,7 @@ function Home() {
 
 function ProjectCard({ title, live, code, preview }) {
   return (
-    <div className="bg-zinc-900 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-zinc-900 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 min-w-[300px] max-w-sm">
       <iframe
         src={preview}
         title={title}
@@ -71,13 +71,25 @@ function Projects() {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto px-4 py-20">
+    <section className="max-w-5xl mx-auto px-4 py-20 overflow-hidden">
       <h3 className="text-xl font-bold mb-6">Projects</h3>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projectData.map((project, index) => (
+      <div className="flex gap-6 animate-marquee whitespace-nowrap">
+        {[...projectData, ...projectData].map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
       </div>
+      <style>
+        {`
+          @keyframes marquee {
+            0%   { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            display: flex;
+            animation: marquee 30s linear infinite;
+          }
+        `}
+      </style>
     </section>
   );
 }
@@ -108,22 +120,37 @@ function App() {
   return (
     <Router>
       <div className="bg-black text-white min-h-screen font-mono">
-        <header className="flex justify-between items-center p-4 max-w-5xl mx-auto">
-          <h1 className="text-lg font-bold">
-            <Link to="/">Aditya Raj Bundela</Link>
-          </h1>
-          <nav className="flex gap-6 text-sm">
+        <header className="flex flex-col md:flex-row md:justify-between md:items-center p-4 max-w-5xl mx-auto gap-2 md:gap-0">
+          <div className="flex justify-between items-center w-full md:w-auto">
+            <h1 className="text-lg font-bold">
+              <Link to="/">Aditya Raj Bundela</Link>
+            </h1>
+            <div className="flex md:hidden gap-4">
+              <a href="https://github.com/P0WERRR" target="_blank" rel="noopener noreferrer">
+                <FaGithub className="w-5 h-5 hover:text-gray-400" />
+              </a>
+              <a href="https://www.linkedin.com/in/adityarajbundela" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="w-5 h-5 hover:text-gray-400" />
+              </a>
+              <a href="https://twitter.com/adityarajcodes" target="_blank" rel="noopener noreferrer">
+                <FaTwitter className="w-5 h-5 hover:text-gray-400" />
+              </a>
+            </div>
+          </div>
+
+          <nav className="flex gap-6 text-sm mt-2 md:mt-0">
             <Link to="/projects" className="hover:text-gray-400">Projects</Link>
             <Link to="/about" className="hover:text-gray-400">About</Link>
           </nav>
-          <div className="flex gap-4">
+
+          <div className="hidden md:flex gap-4">
             <a href="https://github.com/P0WERRR" target="_blank" rel="noopener noreferrer">
               <FaGithub className="w-5 h-5 hover:text-gray-400" />
             </a>
             <a href="https://www.linkedin.com/in/adityarajbundela" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="w-5 h-5 hover:text-gray-400" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/adityarajcodes" target="_blank" rel="noopener noreferrer">
               <FaTwitter className="w-5 h-5 hover:text-gray-400" />
             </a>
           </div>
