@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <div className="relative bg-black text-white min-h-screen font-mono " style={{
-        background: "radial-gradient(circle at center, rgba(255,255,255,0.05), rgba(0,0,0,1))"
+        background: "radial-gradient(circle at center, rgba(255,255,255,0.05), rgba(0,0,0,0.8))",
       }}>
         <Header />
 
@@ -37,7 +37,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
-        <footer className="text-center text-gray-500 text-sm py-10">
+        <footer className="text-center text-gray-700 text-sm py-10">
           <p>Built with React + Tailwind CSS · © {new Date().getFullYear()}</p>
         </footer>
       </div>

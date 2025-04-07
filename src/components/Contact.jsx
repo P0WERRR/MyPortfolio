@@ -33,7 +33,7 @@ function Contact() {
   
     return (
       <section className="max-w-4xl mx-auto px-4 py-20">
-        <h3 className="text-xl font-bold mb-6 text-white animate-pulse duration-1000" style={{ textShadow: '0 0 6px rgba(0, 255, 255, 0.7)' }}>Contact Me</h3>
+        <h3 className="text-xl font-bold mb-6 text-white animate-pulse duration-1000" >Contact Me</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactItems.map((item, idx) => (
             <a

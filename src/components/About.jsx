@@ -15,13 +15,13 @@ function About() {
       
       {/* About Text */}
       <div>
-        <h3 className="text-xl font-bold mb-4 text-white animate-pulse duration-1000" style={{ textShadow: '0 0 6px rgba(0, 255, 255, 0.7)' }}>
+        <h3 className="text-xl font-bold mb-4 text-white animate-pulse duration-1000" >
           About Me
         </h3>
-        <p className="text-gray-400 text-sm md:text-base mb-4 leading-relaxed">
+        <p className="text-gray-700 text-sm md:text-base mb-4 leading-relaxed">
           I'm Aditya Raj Bundela, a frontend developer with a passion for creating smooth, responsive user interfaces...
         </p>
-        <ul className="text-gray-400 text-sm space-y-2 list-disc pl-5">
+        <ul className="text-gray-700 text-sm space-y-2 list-disc pl-5">
           <li>🛠️ 150+ DSA problems solved</li>
           <li>📚 Full-Stack Devsnest Bootcamp</li>
           <li>🚀 Open to freelance gigs</li>
