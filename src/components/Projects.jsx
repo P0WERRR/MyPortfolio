@@ -29,7 +29,7 @@ function Projects() {
         preview: "https://glittering-brigadeiros-f80f4c.netlify.app/"
       },
       {
-        title: "Speed Typer",
+        title: "StopWatch",
         live: "https://basic-stopwatch-pjct.netlify.app/",
         code: "https://github.com/P0WERRR/Stopwatch-basic",
         preview: "https://basic-stopwatch-pjct.netlify.app/"
