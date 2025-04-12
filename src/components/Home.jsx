@@ -4,10 +4,19 @@ import certificate from '../assets/Aditya Raj Bundela.pdf';
 const Home =() => {
   const handleClick = () => {
     window.open("https://drive.google.com/file/d/1WlY0sHq80D3ZIhzNEO6RRjde-_uAM214/view?usp=sharing", "_blank");
+  
+
   }
-  const handleCertifcateClick = () => {
-    
+
+  function vibrate(){
+    if (navigator.vibrate) {
+      navigator.vibrate([200, 100, 200]);
+      console.log("Vibration triggered!");
+    } else {
+      console.log("Vibration API not supported in this browser.");
+    }
   }
+  
     return (
       <main className="flex flex-col items-center justify-center text-center px-4 py-20">
         <motion.h2
@@ -46,9 +55,19 @@ const Home =() => {
             <p className="text-gray-400 text-sm">Actively seeking frontend developer roles and freelance projects.</p>
           </div>
         </div>
+
+        <div className='flex gap-2'>
         <div className="bg-zinc-800 p-4 rounded-lg shadow hover:shadow-md transition my-3">
             <button onClick={handleClick} className="text-lg font-bold mb-2">📝 Download Resume</button>
-          </div>
+        </div>
+
+
+        <div className="bg-zinc-800 p-4 rounded-lg shadow hover:shadow-md transition my-3">
+            <button  onClick={vibrate} className="text-lg font-bold mb-2">vibrate</button>
+        </div>
+        </div>
+       
+            
       </main>
     );
   }
