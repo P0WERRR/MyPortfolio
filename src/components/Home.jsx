@@ -56,16 +56,16 @@ const Home =() => {
           </div>
         </div>
 
-        <div className='flex gap-2'>
+       
         <div className="bg-zinc-800 p-4 rounded-lg shadow hover:shadow-md transition my-3">
-            <button onClick={handleClick} className="text-lg font-bold mb-2">📝 Download Resume</button>
+            <button onClick={() => {
+              handleClick();
+              vibrate();
+              }}  className="text-lg font-bold mb-2">📝 Download Resume</button>
         </div>
 
 
-        <div className="bg-zinc-800 p-4 rounded-lg shadow hover:shadow-md transition my-3">
-            <button  onClick={vibrate} className="text-lg font-bold mb-2">vibrate</button>
-        </div>
-        </div>
+     
        
             
       </main>
